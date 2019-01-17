@@ -3,6 +3,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.0'
 
+gem 'cancancan', '~> 2.0'
+gem 'bootstrap', '~> 4.2.1'
+gem 'simple_form'
+gem "devise"
+gem "awesome_print", require:"ap"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 # Use postgresql as the database for Active Record
@@ -48,6 +53,10 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'meta_request'
+  gem 'peek'
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 group :test do
