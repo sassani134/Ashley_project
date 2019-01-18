@@ -6,15 +6,30 @@
   <div class="form-inputs">
     <%= f.input :email,
                 required: true,
-                autofocus: true ,
                 input_html: { autocomplete: "email" }%>
+
+    <%= f.input :username,
+                required: true,
+                autofocus: true ,
+                input_html: { autocomplete: "username" }%>
+
+    <%= f.input :avatar %>
+
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                 input_html: { autocomplete: "new-password" } %>
+
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+                <div class="col-12 md-6">
+          
+          <div class="field">
+            <%= form.label :avatar %><br/>
+            <%= form.file_field :avatar %>
+          </div>
+</div>
   </div>
 
   <div class="form-actions">

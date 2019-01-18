@@ -1,8 +1,20 @@
 <h1>Pages#home</h1>
 
 <% if current_user %>
+<div>
+
+<%= current_user.email %>
+<%= current_user.username %>
+<% if current_user.avatar.attached? %>
+
+<% else %>
+<%=image_tag current_user.avatar %>
+
+<% end %>
+</div>
 
 
+<%= link_to 'edition profile', edit_user_registration_path %>
 <%= link_to 'Déconexion', destroy_user_session_path, method: :delete %>
 
 <% else %>
