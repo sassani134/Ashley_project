@@ -1,17 +1,17 @@
 <h1>Pages#home</h1>
 
 <% if current_user %>
-<div>
-
-<%= current_user.email %>
-<%= current_user.username %>
-<% if current_user.avatar.attached? %>
-
+	<div>
+		<%= current_user.email %>
+		<%= current_user.username %>
+		<% if current_user.avatar.attached? %>
+		<%=image_tag url_for(current_user.avatar) %>
 <% else %>
-<%=image_tag current_user.avatar %>
+		<img src="../assets/no_photo.svg" alt="pas de photos">
 
+	</div>
 <% end %>
-</div>
+
 
 
 <%= link_to 'edition profile', edit_user_registration_path %>
